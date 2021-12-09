@@ -23,11 +23,11 @@ body {
 .navbar-brand {
    margin-left: 180px;
 }
-#contact {
+#kepo {
    color: #fff;
    border-bottom: 3.5px solid #f68b1e;
    font-weight: 500;
 }
-.forms{
-    color:#fd7e14 ;
-}
+.kepo{
+   color:#fd7e14 ;
+  }

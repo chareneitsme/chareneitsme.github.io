@@ -1,49 +1,32 @@
-body{
-    background: #ddd;
+body {
+    font-family: 'Montserrat', sans-serif;
 }
-.profile-area{
-    padding: 80px 0;
+.navbar {
+   padding: 14px;
 }
-.card{
-    box-shadow: 0 0 30px rgba(0, 0, 0, 5);
-    overflow: hidden;
-    border-radius: 15px;
+.navbar-dark {
+   background:#101010;
+} 
+.navlink {
+   font-family: 'Montserrat', sans-serif;
+   text-decoration: none;
+   color: #7b7b7b;
+   padding: 22px;
+   padding-left: -5px;
+   font-size: 15px;
+   margin-left: 55px;
 }
-.img1 imgs{
-    height: 200px;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    width: 100%;
+.navlink:hover {
+   color: #fff;
+   border-bottom: 3.5px solid #f68b1e;
 }
-.img2 img{
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 7px solid #fff;
-    margin-top: -80px;
+.navbar-brand {
+   margin-left: 180px;
 }
-.card:hover .img2 img {
-    border-color: #fd7e14;
-    transition: .7s;
-}
-.main-text{
-    padding: 30px 0;
-    text-align: center;
-}
-.main-text h2{
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 20px;
-    margin: 0 0 20px;
-}
-.main-text p{
-    font-size: 16px;
-    padding: 0 35px;
+#biodata {
+   color: #fff;
+   border-bottom: 3.5px solid #f68b1e;
+   font-weight: 500;
 }
 .socials{
     text-align: center;
@@ -53,4 +36,7 @@ body{
     font-size: 20px;
     color: #fd7e14;
     padding: 0;
+}
+.itsme{
+ color:#fd7e14 ;
 }

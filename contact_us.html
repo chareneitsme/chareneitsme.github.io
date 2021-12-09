@@ -1,88 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>CONTACT US</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Contact Us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="contactus.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-<style>
-</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="contactus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka+One&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <form>
-        <div class="form-group">
-<br>
-          <label for="exampleInputEmail1">Full Name</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="type full name">
-        </div><br>
-<br>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Your Email" name="email">
-          <span class="input-group-text">@example.com</span>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="logo.png" class="logo">
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navlink" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="biodata.html">Biodata</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="contact_us.html" id="contact">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="kepo.html">Kepo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="https://unai.edu">UNAI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="https://fti.unai.edu">FTI UNAI</a>
+                </li>
+            </ul>
         </div>
-<br>
-          <form action="/action_page.php">
-            <div class="input-group mb-3">
-              <span class="input-group-text">@</span>
-              <input type="text" class="form-control" placeholder="Username" name="usrname">
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="forms"><center><h1> FORMS </h1></center></div>
+    <div class="container mt-3" style="background-color: rgb(9, 10, 10); padding: 7% 3% 5% 3%">
+        <form style="color: #fd7e14;">
+            <div class="row mb-3">
+                <label for="inputText3" class="col-sm-2 col-form-label">Full Name</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputText3" placeholder="Type your full name">
+                </div>
             </div>
-<br>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-<br>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-            <label class="form-check-label" for="exampleRadios1">
-              Male
-            </label>
-          </div>
-<br>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-            <label class="form-check-label" for="exampleRadios2">
-              Female
-            </label>
-          </div>
-<br>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Religion</option>
-            <option value="1">Christian</option>
-            <option value="2">Islam</option>
-            <option value="3">Catholic</option>
-            <option value="4">Hindu</option>
-            <option value="5">Budha</option>
-            <option value="6">Confucius</option>
-          </select>
-<br>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Address</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-<br>
-          <div class="form-group row">
-            <div class="col-sm-2">Hobby</div>
+            <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <div class="form-check">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Cooking</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">Swimming</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option3">
-            <label class="form-check-label" for="inlineCheckbox3">Travelling</label>
-          </div>
-          
+                <input type="email" class="form-control" id="inputEmail3">
+            </div>
+            </div>
+            <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3">
+            </div>
+            </div>
+            <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="Gender" id="male" value="male" checked>
+                <label class="form-check-label" for="male">
+                    Male
+                </label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="Gender" id="female" value="female">
+                <label class="form-check-label" for="female">
+                    Female
+                </label>
+                </div>
+            </div>
+            </fieldset>
+            <div class="row mb-3">
+                <label for="inputAgama" class="col-sm-2 col-form-label pt-0">Religion</label>
+                <div class="col-sm-10">
+                    <select id="inputAgama" class="form-select">
+                    <option selected>Select your Religion</option>
+                    <option>Christian</option>
+                    <option>Islam</option>
+                    <option>Catholic</option>
+                    <option>Hindu</option>
+                    <option>Budha</option>
+                    <option>Confucius</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="comment" class="col-sm-2 col-form-label pt-0">Address</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                    </div>
+            </div>
+            <div class="row mb-3">
+                <label for="hobby" class="col-sm-2 col-form-label pt-0">Hobby</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hobby">
+                        <label class="form-check-label" for="hobby">
+                            Cooking
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hobby">
+                        <label class="form-check-label" for="hobby">
+                            Swimming
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hobby">
+                        <label class="form-check-label" for="hobby">
+                            Music
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hobby">
+                        <label class="form-check-label" for="hobby">
+                            Travelling
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hobby">
+                        <label class="form-check-label" for="hobby">
+                            Etc
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark">Sign in</button>
+        </form>
+    </div>
 
 
-      </form>
+    <br><br><br><br><br>
+
+    <div class=container-sm-12 style="background-color: #191919;">
+        <br><br><br>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="logo.png" class="logo" style="margin-left: 65px;">
+                <br><br>
+                <p style="color:#fff; font-size:15px;margin-left: 65px;">Copyright © 2020 PT. TALKINDO SELAKSA ANUGRAH. All Rights Reserved</p>
+            </div>
+            <div class="col-sm-2">
+                <p style="color:#fff; font-size:15px;margin-left: 65px;">Company</p>
+                <p style="color:rgb(150, 150, 150);margin-left: 65px;font-size: 13px;">Our Product</p>
+                <p style="color:rgb(150, 150, 150);margin-left: 65px;font-size: 13px;"style="margin-left: 65px;">Our Store</p>
+            </div>
+            <div class="col-sm-2">
+                <p style="color:#fff; font-size:15px;margin-left: 65px;">Support</p>
+                <p style="color:rgb(150, 150, 150);margin-left: 65px;font-size: 13px;">Privacy Policy</p>
+            </div>
+            <div class="col-sm-2">
+                <p style="color:#fff; font-size:15px;margin-left: 65px;">Contact Us</p>
+                <p style="color:rgb(150, 150, 150);margin-left: 65px;font-size: 13px;">0815-8998-000</p>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>
