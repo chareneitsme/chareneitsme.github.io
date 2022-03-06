@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Paket</title>
+    <link rel="stylesheet" href="halaman_paket.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+</head>
+<style>
+    body {
+  background-image: url('aku1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+</style>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand">
+            <img src="logolaundry.png" class="logo">
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <li class="nav-item">
+                    <a class="navlink" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="navlink" href="halaman_karyawan.html">Karyawan</a>
+            </li>
+            <li class="nav-item">
+                <a class="navlink" href="halaman_pelanggan.html">Pelanggan</a>
+            </li>
+            <li class="nav-item">
+                <a class="navlink" href="halaman_paket.html" id="paket">Paket</a>
+            </li>
+            <li class="nav-item">
+                <a class="navlink" href="halaman_transaksi.html">Transaksi</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br><br><br>
+
+
+    <div id="app">
+
+        <div class="container">
+            <div class="py-5 text-center">
+              <h2>PAKET</h2>
+            </div>
+      
+              <div class="col-md-12">
+                <h4 class="mb-3">Data Paket <button class="btn btn-md btn-primary" v-on:click="resetForm()">Create new Paket </button>
+                </h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>ID Paket</th>
+                        <th>Nama Paket</th>
+                        <th>Harga Paket/Kg</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr v-for="ket in paket">
+                        <td>{{ ket.id }}</td>
+                        <td>{{ ket.idPaket }}</td>
+                        <td>{{ ket.namaPaket }}</td>
+                        <td>{{ ket.hargaPaket }}</td>
+                        <td><button class="btn btn-md btn-warning" v-on:click="getEdit(ket)">Edit</button></td>
+                        <td><button class="btn btn-danger" v-on:click="getDelete(ket)">Delete</button></td>
+                    </li>
+                </table>
+
+                <div v-if="message" class="alert alert-success" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                
+            
+                <h4 class="mb-3">Ket Information</h4>
+                  <div class="row">
+                    <div class="mb-3">
+                      <label for="idPaket">ID Paket</label>
+                      <input  v-model="idPaket" type="text" class="form-control" id="idPaket" placeholder="" value="" required>
+                      <div class="invalid-feedback">
+                        Valid ID Paket is required.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="namaPaket">Nama Paket</label>
+                      <div>
+                        <select v-model="namaPaket">
+                          <option>Cuci Saja</option>
+                          <option>Cuci + Setrika</option>
+                          <option>Cuci + Setrika + Antar</option>
+                        </select> 
+                      </div>
+                      <div class="invalid-feedback">
+                        Valid Nama Paket is required.
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="mb-3">
+                    <label for="hargaPaket">Harga Paket</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <!-- <span class="input-group-text"></span> -->
+                      </div>
+                      <input v-model="hargaPaket" type="text" class="form-control" id="hargaPaket" placeholder="" required>
+                      <div class="invalid-feedback" style="width: 100%;">
+                        Your Harga Paket is required.
+                      </div>
+                    </div>
+                  </div>
+      
+      
+                  </div>
+                
+                  <hr class="mb-4">
+                  <button v-if="!editMode && !deleteMode" v-on:click="createKet" class="btn btn-primary btn-lg btn-block" type="submit">Submit Data</button>
+                  <button v-if="editMode" v-on:click="updateKet" class="btn btn-warning btn-lg btn-block" type="submit">Update Data</button>
+                  <button v-if="deleteMode" v-on:click="deleteKet" class="btn btn-danger btn-lg btn-block" type="submit">Delete Data</button>
+                  
+              </div>
+            </div>
+
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">&copy; chareneitsme</p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#">Privacy</a></li>
+                  <li class="list-inline-item"><a href="#">Terms</a></li>
+                  <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul>
+              </footer>
+
+    </div>
+    
+
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        var app = new Vue ({
+            el: '#app',
+            data: {
+                errors: [],
+                message: null,
+                paket:[],
+                ketIdEdit: null,
+                ketIdDelete: null,
+                editMode: false,
+                deleteMode: false,
+                idPaket: '',
+                namaPaket: '',
+                hargaPaket: '',
+            },
+            mounted: function() {
+                this.getKet();
+            },
+            methods: {
+                getKet() {
+                    axios.get('https://621ec8fc849220b1fca14504.mockapi.io/paket')
+                        .then(response => {
+                            this.paket = response.data;
+                            console.log(response);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                createKet: function(){
+                    axios.post('https://621ec8fc849220b1fca14504.mockapi.io/paket', {
+                        idPaket: this.idPaket,
+                        namaPaket: this.namaPaket,
+                        hargaPaket: this.hargaPaket,
+                    })
+                    .then(response => {
+                            this.getKet();
+                            this.message = "Your data has been submitted";
+                            console.log(response);
+                    })
+                    .catch(error => {
+                            console.log(error);
+                    });
+                },
+                resetForm: function () {
+                    this.message = null;
+                    this.editMode = false;
+                    this.deleteMode = false;
+                    this.ketIdEdit = null;
+                    this.idPaket = null;
+                    this.namaPaket = null;
+                    this.hargaPaket = null;
+                },
+                getEdit: function (ket) {
+                    this.message = null;
+                    this.editMode = true;
+                    this.deleteMode = false;
+                    this.ketIdEdit = ket.id;
+                    this.idPaket = ket.idPaket;
+                    this.namaPaket = ket.namaPaket;
+                    this.hargaPaket = ket.hargaPaket;
+                },
+                getDelete: function (ket) {
+                    this.message = null;
+                    this.deleteMode = true;
+                    this.editMode = false;
+                    this.ketIdDelete = ket.id;
+                    this.idPaket = ket.idPaket;
+                    this.namaPaket= ket.namaPaket;
+                    this.hargaPaket = ket.hargaPaket;
+                },
+                updateKet: function () {
+                    axios.put(`https://621ec8fc849220b1fca14504.mockapi.io/paket/${this.ketIdEdit}`, {
+                            idPaket: this.idPaket,
+                            namaPaket: this.namaPaket,
+                            hargaPaket: this.hargaPaket,
+                        })
+                        .then(res => {
+                            // handle success
+                            this.message = "Your data has been updated";
+                            this.getKet();
+                        })
+                        .catch(err => {
+                            // handle error
+                            console.log(err);
+                        })
+                },
+                // Delete User
+                deleteKet: function () {
+                    axios.delete(`https://621ec8fc849220b1fca14504.mockapi.io/paket/${this.ketIdDelete}`)
+                        .then(res => {
+                            // handle success
+                            this.message = "Your data has been deleted";
+                            this.getKet();
+                        })
+                        .catch(err => {
+                            // handle error
+                            console.log(err);
+                        })
+                }
+            }
+        })
+        
+    </script>
+
+
+</body>
+</html>
